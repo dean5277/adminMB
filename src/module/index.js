@@ -5,16 +5,16 @@ import iView from 'iview'
 import axios from '../api/http'
 import 'iview/dist/styles/iview.css'
 import store from '../store/store'
-import * as types from '../store/types'
+/*import * as types from '../store/types'*/
 
 Vue.use(VueRouter)
 Vue.use(iView)
 Vue.prototype.axios = axios;
 
-import Baseframe from '../components/demo/main'//父级路由
-import UserList from '../components/demo/userlist'//用户列表
-import AddUser from '../components/demo/adduser'//增加用户
-import UpdateUser from '../components/demo/updateuser'//修改用户
+import Baseframe from '../components/logistics/main'//父级路由
+import UserList from '../components/logistics/userlist'//用户列表
+import AddUser from '../components/logistics/adduser'//增加用户
+import UpdateUser from '../components/logistics/updateuser'//修改用户
 const routes = [
    {path : "/main" ,component: Baseframe,//父级路由
 	   children:[//子级路由
@@ -42,7 +42,8 @@ const router = new VueRouter({
 })
 
 const app = new Vue({
-  router
+  router,
+  store
 }).$mount('#app');
 
 

@@ -31,7 +31,7 @@ module.exports = {
         
        
         '/user/' :{
-          target: 'http://10.0.6.21:1030',
+          target: 'http://10.0.8.98:1030',
               pathRewrite: {
                 '^/user/': '/user/'
               }
