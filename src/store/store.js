@@ -4,15 +4,16 @@ import * as types from './types'
 Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
-        user: {},
+        menuJson: {},
+        userType:"",
+        spanLeft:5,
         uid:'',
         token: null,
         title: ''
     },
     mutations: {
-         [types.UID]: (state, data) => {
-            state.uid = data;
-          
+        [types.spanLeft]: (state, data) => {
+            state.spanLeft = data;
         }
     }
 })
