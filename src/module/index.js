@@ -5,6 +5,7 @@ import iView from 'iview'
 import axios from '../api/http'
 import 'iview/dist/styles/iview.css'
 import store from '../store/store'
+/*import '../my-theme/index.less'*/
 /*import * as types from '../store/types'*/
 
 Vue.use(VueRouter)

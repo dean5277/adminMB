@@ -5,8 +5,8 @@
 .flexBox{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;}
 </style>
 <template>
-	 <Row>
-        <i-col :span="spanRight">
+	<!--  <Row>
+            <i-col :span="spanRight"> -->
             <div class="layout-content-main">
                 <div class="addUserContainer">
                 	<Form ref="formCustom"  :rules="ruleCustom" :model="formCustom" :label-width="80">
@@ -42,8 +42,8 @@
                     </Form>
                 </div>
             </div>
-        </i-col>
-    </Row> 
+       <!--  </i-col>
+           </Row>  -->
 </template>
 <script  type="application/ecmascript">
 	import api from '../../api/userapi'

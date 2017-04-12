@@ -1,45 +1,26 @@
 <style scoped>
 	.tableContainer{padding: 10px}
 	.addUser{justify-content: flex-end;padding:5px;}
-	.ivu-table .demo-table-info-row td{
-        background-color: #2db7f5;
-        color: #fff;
-    }
-    .ivu-table .demo-table-error-row td{
-        background-color: #ff6600;
-        color: #fff;
-    }
-    .ivu-table td.demo-table-info-column{
-        background-color: #2db7f5;
-        color: #fff;
-    }
-    .ivu-table .demo-table-info-cell-name {
-        background-color: #2db7f5;
-        color: #fff;
-    }
-    .ivu-table .demo-table-info-cell-age {
-        background-color: #ff6600;
-        color: #fff;
-    }
-    .ivu-table .demo-table-info-cell-address {
-        background-color: #187;
-        color: #fff;
-    }
+	.ivu-table .demo-table-info-row td{background-color:#2db7f5;color:#fff}
+    .ivu-table .demo-table-error-row td{background-color:#f60;color:#fff}
+    .ivu-table td.demo-table-info-column{background-color:#2db7f5;color:#fff}
+    .ivu-table .demo-table-info-cell-name{background-color:#2db7f5;color:#fff}
+    .ivu-table .demo-table-info-cell-age{background-color:#f60;color:#fff}
+    .ivu-table .demo-table-info-cell-address{background-color:#187;color:#fff}
+
 </style>
 <template>
-	 <Row>
-        <i-col :span="spanRight">
+	 
         	
-            <div class="layout-content-main">
-            	<div class="tableContainer">
-            		<div class="flexBox addUser">
-            			<Button type="primary" @click="toRoute('/main/adduser')">新增用户</Button>
-            		</div>
-            		<Table border :context="self" :columns="columns7" :data="data6"></Table>
-            	</div>
-            </div>
-        </i-col>
-    </Row> 
+    <div class="layout-content-main">
+    	<div class="tableContainer">
+    		<div class="flexBox addUser">
+    			<Button type="primary" @click="toRoute('/main/adduser')">新增用户</Button>
+    		</div>
+    		<Table border :context="self" :columns="columns7" :data="data6"></Table>
+    	</div>
+    </div>
+        
 </template>
 <script  type="application/ecmascript">
 	import api from '../../api/userapi'

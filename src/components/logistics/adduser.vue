@@ -2,8 +2,8 @@
     .addUserContainer{width:400px; padding: 40px}
 </style>
 <template>
-	 <Row>
-        <i-col span="19">
+	 <!-- <Row>
+             <i-col span="19"> -->
             <div class="layout-content-main">
                 <div class="addUserContainer">
                 	<Form ref="formCustom"  :rules="ruleCustom" :model="formCustom" :label-width="80">
@@ -39,8 +39,8 @@
                     </Form>
                 </div>
             </div>
-        </i-col>
-    </Row> 
+        <!-- </i-col>
+            </Row>  -->
 </template>
 <script  type="application/ecmascript">
 	
