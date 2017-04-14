@@ -4,4 +4,5 @@ export default {
     ,add_user:'/user/save'//增加用户
     ,get_user:'/user/get/'//获取单个用户信息
     ,update_user:"/user/update"//更新用户信息
+    ,get_token:"/auth/"//get token
 }

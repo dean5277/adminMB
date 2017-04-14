@@ -4,8 +4,8 @@
     .layout{background:#f5f7f9; position: relative; min-height: 100%; height: 100%}
     .layout-nav{width:420px;margin:0 auto}
     .layout-assistant{width:300px;margin:0 auto;height:inherit}
-    .layout-breadcrumb{padding:10px 15px 0}
-    .layout-content{min-height:100%;/* margin:15px; */overflow:hidden;background:#fff;border-radius:4px; position: relative;padding-top: 50px}
+    
+    .layout-content{min-height:100%;/* margin:15px; */overflow:hidden;background:#fff;border-radius:4px; position: relative;padding-top: 50px; background-color: #f3f3f3}
     .layout-content-main{padding:10px}
     .layout-copy{text-align:center;padding:10px 0 20px;color:#9ea7b4}
     .layout-hide-text{display: none;}
@@ -13,19 +13,13 @@
 </style>
 <style>
     html,body,#app{position: relative;min-height: 100%; height: 100%}
+    .ivu-breadcrumb-item-link{font-weight: bold;color:#657180}
+    .layout-breadcrumb{padding:10px 15px ;margin-bottom: 15px }
 </style>
 <template>
     <div class="layout">
         <topMenu></topMenu>
         <div class="layout-content">
-            <!-- <div class="layout-header">
-                <Row>
-                    
-                    <i-col :span="spanRight">
-                        
-                    </i-col>
-                </Row>
-            </div> -->
             <Row>
                 <i-col :span="spanLeft" :class="{'layout-hide-text': spanLeft < 5}">
                      <!-- 左侧菜单组件 -->
@@ -37,8 +31,9 @@
                     <div  class="layout-breadcrumb">
                         <!-- 面包屑 -->
                         <Breadcrumb>
-                            <Breadcrumb-item>{{subMenuName}}</Breadcrumb-item>
-                            <Breadcrumb-item replace href="/main">用户列表</Breadcrumb-item>
+                            <Breadcrumb-item>{{topMenuName}}</Breadcrumb-item>
+                            <Breadcrumb-item v-for="item in subMenuOpt"  replace :href="item.link" :key="item.id">{{item.name}}</Breadcrumb-item>
+                            <!-- <Breadcrumb-item v-if="subMenuOpt.subMenuOptChild" v-for="item in subMenuOpt.subMenuOptChild" :key="item.id"  replace :href="item.link">{{item.name}}</Breadcrumb-item> -->
                         </Breadcrumb>
                     </div>
                     <router-view></router-view>
@@ -64,16 +59,29 @@
         },
         data () {
             return {
-                subMenuName:""
+
+
             }
         },
+
+        created (){
+            console.log(typeof this.$store.state.breadMenu[1])
+        },
         computed:{//动态计算属性
-            spanLeft:function(){
+            spanLeft (){
                 return this.$store.state.spanLeft != 0 ? this.$store.state.spanLeft : 0;
             },
-            spanRight:function(){
+            spanRight (){
                 return 24 - this.$store.state.spanLeft;
-            }
+            },
+            topMenuName (){
+
+                return this.$store.state.breadMenu.firstMenu;
+            },
+            subMenuOpt (){
+                console.log(this.$store.state.breadMenu.subMenu)
+                return this.$store.state.breadMenu.subMenu;
+            },
         }
     }
 </script>

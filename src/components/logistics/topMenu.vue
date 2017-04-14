@@ -42,7 +42,6 @@
  .layout-notice-icon .ivu-select-dropdown{margin:16px 0;}
 </style>
 <template>
-   
     <div class="top-container ivu-menu-horizontal">
          <Row>
             <i-col :span="5">
@@ -178,12 +177,10 @@
         methods:{//方法集
             toggleClick () {//方法，toggleClick () === toggleClick:function()
                 let v = this;
-                console.log(v.$store.state.spanLeft )
                 if(v.$store.state.spanLeft > 1){
                     v.$store.commit(types.spanLeft,0);
                 }else{
                     v.$store.commit(types.spanLeft,5);
-
                 }
                 
             }

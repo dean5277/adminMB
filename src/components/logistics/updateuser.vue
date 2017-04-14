@@ -97,7 +97,6 @@
 	  created () {
 	 	let v = this,
             uid = window.location.href.split('uid=')[1];
-            debugger;
         if(uid != undefined && uid!=""){
             v.uid = uid;
             v.axios.get(api.get_user + uid)

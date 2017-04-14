@@ -9,11 +9,22 @@ export default new Vuex.Store({
         spanLeft:5,
         uid:'',
         token: null,
-        title: ''
+        title: '',
+        ticket:'',
+        breadMenu:{firstMenu:"",subMenu:[{link:"",name:"",index:""}]}
     },
     mutations: {
         [types.spanLeft]: (state, data) => {
             state.spanLeft = data;
+        },
+        [types.breadMenu]: (state,data) =>{
+            state.breadMenu = data;
+        },
+        [types.token]: (state,data) =>{
+            state.token = data;
+        },
+        [types.ticket]: (state,data) =>{
+            state.ticket = data;
         }
     }
 })

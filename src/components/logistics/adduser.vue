@@ -138,7 +138,7 @@
         handleReset (name) {
             this.$refs[name].resetFields();
         },
-        toRoute (path){
+        routeTo (path){
             let v = this;
             v.$router.push(path);
         }
